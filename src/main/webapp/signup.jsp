@@ -126,7 +126,7 @@ input{
                 </div>
                 <div class="confopassword">
                     <h4>Confirm Password</h4>
-                    <input type="password" placeholder="Confirm your password">
+                    <input type="password" placeholder="Confirm your password" name="cp">
                 </div>
             </div>
 

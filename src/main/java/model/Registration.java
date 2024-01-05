@@ -25,8 +25,6 @@ public class Registration {
 	public String Registration(String fname, String uname, String phone, String email, String pw) throws SQLException {
 		
 		String status="";
-		
-		
 		stmt=con.createStatement();
 		rs = stmt.executeQuery("select * from user where phone='" + phone + "' or email='" + email + "';");
 		boolean b=rs.next();

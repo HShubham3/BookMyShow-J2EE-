@@ -111,32 +111,6 @@ body {
 			<input type="submit" class="primary-button btn" name="login"
 				value="Sign In">
 
-			<div>
-			<h5>Or sign in using this</h5>
-			<div class="signup flex">
-				<div class="sign-footer flex">
-					<div class="logo">
-						<img src="./assets/asset 24.svg" alt="google">
-					</div>
-					<div class="logo">
-						<img src="./assets/asset 25.svg " alt="facebook">
-					</div>
-					<div class="logo">
-						<img src="./assets/asset 29.svg" alt="twitter">
-					</div>
-					<div class="logo">
-						<img src="./assets/asset 28.svg" alt="twitter">
-					</div>
-
-				</div>
-
-				<div class="signup-footer">
-					<p>sign up using</p>
-					<a href="http://localhost:8080/BookMyShowClone/signup.jsp">SIGN UP</a>
-				</div>
-			</div>
-		</div>
-     
 		</form>
 		
 

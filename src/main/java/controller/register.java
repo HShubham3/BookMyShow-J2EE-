@@ -18,7 +18,7 @@ import model.Registration;
 public class register extends HttpServlet {
 	
 	
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out=response.getWriter();
 		HttpSession session = request.getSession();
@@ -34,7 +34,14 @@ public class register extends HttpServlet {
 			String cp=request.getParameter("cp");
 			
 			if(pw.equals(cp)) {
-				String status = reg.Registration(fname,uname,phone,email,pw);
+				
+				String status="";
+				try {
+					status = reg.Registration(fname,uname,phone,email,pw);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				if(status.equals("exist")) {
 					request.setAttribute("status", "Existed record");
 					RequestDispatcher rd1 = request.getRequestDispatcher("/signup.jsp");
@@ -60,7 +67,13 @@ public class register extends HttpServlet {
 			String username=request.getParameter("username");
 			String password=request.getParameter("pw");
 			
-			String status=reg.login(username,password);
+			String status="";
+			try {
+				status = reg.login(username,password);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
 			if(status.equals("suceess")) {
@@ -77,13 +90,13 @@ public class register extends HttpServlet {
 	}
 	
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		try {
-			processRequest(req, resp);
-		} catch (ServletException | IOException | SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		try {
+//			processRequest(req, resp);
+//		} catch (ServletException | IOException | SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
 }
