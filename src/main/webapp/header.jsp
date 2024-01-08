@@ -25,8 +25,12 @@
                         <option value="">Dehli-NCR</option>
                         <option value="">Surat</option>
                     </select>
+                    <% if (session.getAttribute("uname") != null) {%>
+                    <a style="color:#fff;"><i class="fa-solid fa-circle-user" style="padding:5px;"></i><%=session.getAttribute("uname")%></a>
+                    <%}else { %>
                     <a href="signin.jsp" class="primary-button">Sign in</a>
                     <a href="#"><i class="fa-solid fa-bars fa-xl" style="color: #f0f2f4;"></i></a>
+                    <%} %>
                 </div>
             </div>
         </div>
