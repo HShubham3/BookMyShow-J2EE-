@@ -15,12 +15,14 @@
 
 body{
     /* background-color: burlywood; */
-    background-image: url(/assets/loginback);
+    background-image: url(./assets/loginback);
 }
 
 a{
     text-decoration: none;
-    color: aliceblue;
+    color: black;
+    font-weight:900;
+    font-size:1.2rem;
 
 }
 
@@ -46,7 +48,7 @@ input{
     padding: 6px 85px;
     transition: 0.25s ease-out;
     text-align: center;
-    /* width: 90%; */
+     width: 98%; 
 }
 
 .primary-button:hover{
@@ -91,6 +93,22 @@ input{
     margin: 30px 6px 0 6px;
     padding: 10px;
 }
+
+.footer-section{
+ 	text-align:center;
+ 	margin-top:40px;
+ 	
+
+}
+
+.ft:hover{
+
+	color:red;
+	font-size:1.1rem;
+	transition: ease 0.2s;
+
+}
+
 </style>
 
 </head>
@@ -99,7 +117,7 @@ input{
 <form action="register" method="post" class="signup-div flex">
 
   		<div class="center">
-            <h1>Sign Up</h1>
+            <h1 style="text-align:center;">Sign Up</h1>
             <div class="name-div flex">
                 <div class="fullname">
                     <h4>Full Name</h4><input type="text" placeholder="Enter your name" name="fname">
@@ -129,10 +147,18 @@ input{
                     <input type="password" placeholder="Confirm your password" name="cp">
                 </div>
             </div>
-
+            <div style="text-align:center;">
             <input type="submit" class="primary-button btn" name="register" value="Sign Up">
+            </div>
+            
+            <div class="footer-section">
+			 	<p>Don't have a account</p>
+				<a href="signin.jsp" class="ft" >Sign in</a>
+            </div>
+            	  
+					 
+                
         </div>
-
 	</form>
 
 

@@ -54,14 +54,13 @@ public class Registration {
 	}
 
 	public String login(String username, String password) throws SQLException {
-		String status="",fname="",phone="",email="",date="";
-		int id=0;
+		String status="",fname="",phone="",email="",date="",id;
 		stmt=con.createStatement();
 		rs=stmt.executeQuery("select * from user where username ='"+username+"'and password='"+password+"'");
 		
 		boolean b=rs.next();
 		if(b) {
-			id=rs.getInt(1);
+			id=rs.getString(1);
 			fname=rs.getString(2);
 			email=rs.getString(4);
 			phone=rs.getString(5);	

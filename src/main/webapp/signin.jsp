@@ -44,7 +44,7 @@ h2 {
 
 body {
 	background-color: radial-gradient(#C6EA8D, #FE90AF);
-	background-image: url(/assets/loginback);
+	background-image: url(./assets/loginback);
 }
 
 .login {
@@ -79,17 +79,13 @@ body {
 	gap: 70px;
 }
 
-.signup-footer {
-	text-align: center;
-}
-
 .logo img {
 	width: 30px;
 	padding-right: 5px;
 	cursor: pointer;
 }
 
-.signup-footer a {
+a {
 	color: black !important;
 	font-weight: 900;
 }
@@ -108,9 +104,11 @@ body {
 				<p>Forgot password?</p>
 			</div>
 
-			<input type="submit" class="primary-button btn" name="login"
-				value="Sign In">
-
+			<input type="submit" class="primary-button btn" name="login" value="Sign In">
+				<div style="text-align:center;">
+					<p>Don't have a account</p>
+					<a href="signup.jsp">Sign Up</a>
+                </div>
 		</form>
 		
 

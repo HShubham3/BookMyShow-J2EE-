@@ -173,7 +173,7 @@ padding: 0 20px;
             background-repeat: no-repeat;
             background-size: 100% 100%;
             animation-name: myanimation;
-            animation-duration: 20s;
+            animation-duration: 15s;
             animation-timing-function: smooth;
             animation-iteration-count: infinite;
             cursor:pointer;
@@ -199,6 +199,7 @@ padding: 0 20px;
     80% {
         background-image: url(/assets/float5.avif);
     }
+    
 
 }
 
