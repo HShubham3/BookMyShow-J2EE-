@@ -18,7 +18,7 @@ import model.Registration;
 public class register extends HttpServlet {
 	
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out=response.getWriter();
 		HttpSession session = request.getSession();
@@ -86,17 +86,27 @@ public class register extends HttpServlet {
 				RequestDispatcher rd1 = request.getRequestDispatcher("/signin.jsp");
 				rd1.forward(request, response);
 			}
-		} 	
+		}
+		else if(request.getParameter("logout")!=null) {
+			session.invalidate();
+			request.setAttribute("status", " Registration Failed");
+			RequestDispatcher rd1 = request.getRequestDispatcher("/home.jsp");
+			rd1.forward(request, response);
+			
+		}
+		
 	}
 	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			processRequest(req, resp);
+	 
+	}
 
-//	@Override
-//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		try {
-//			processRequest(req, resp);
-//		} catch (ServletException | IOException | SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			processRequest(req, resp);
+	 
+	}
 	
 }

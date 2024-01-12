@@ -41,7 +41,7 @@
                     <div class="option"><a href="search.jsp">Search</a></div>
                     <%}%>
                     <div class="option"><a href="edit.jsp" >Edit</a></div>
-                    <div class="option"><a href="logout.jsp">Logout</a></div>
+                    <div class="option" ><a href="register?logout=yes" class="primary-button">Logout</a></div>
                     <div style="color:#fff;"><i class="fa-solid fa-circle-user" style="padding:5px;"></i><%=session.getAttribute("uname")%></div>
                     <%}else { %>
                     <a href="signin.jsp" class="primary-button">Sign in</a>

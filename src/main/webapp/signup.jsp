@@ -14,7 +14,7 @@
 }
 
 body{
-    /* background-color: burlywood; */
+    background-color: #C0d6df;
     background-image: url(./assets/loginback);
 }
 
@@ -66,7 +66,7 @@ input{
 }
 
 .center{
-    margin-top:13%;
+    margin-top:9%;
     background-color: rgba(236, 238, 188, 0.7);
     padding: 30px;
     box-shadow: 10px 10px 5px rgb(236, 238, 188);

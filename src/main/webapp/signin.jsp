@@ -43,7 +43,7 @@ h2 {
 }
 
 body {
-	background-color: radial-gradient(#C6EA8D, #FE90AF);
+	background-color: #AABBC2;
 	background-image: url(./assets/loginback);
 }
 
