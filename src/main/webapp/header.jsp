@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<nav>
+	<nav>
         <div class="nav-top">
             <div class="container first flex">
                 <div class="left flex">
@@ -66,7 +66,7 @@
                     <a href="#" class="right-menu">Offers</a>
                     <a href="#" class="right-menu">Gift Cards</a>
                 </div>
-            </div>
+            </div> 
         </div>
 
     </nav>
