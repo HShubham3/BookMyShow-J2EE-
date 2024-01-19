@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
@@ -84,5 +85,63 @@ public class Registration {
 		return status;
 	}
 	
+	public ArrayList<User> getUserinfo(String id) throws SQLException{
+		
+		User u =new User();
+		ArrayList<User> al=new ArrayList<User>();
+		stmt=con.createStatement();
+		String qury = "select * from user where slno='"+id+"'";
+		
+		rs=stmt.executeQuery(qury);
+		
+		if(rs.next()) {
+			u.setFname(rs.getString("fullname"));
+			u.setUname(rs.getString("username"));
+			u.setEmail(rs.getString("email"));
+			u.setPhone(rs.getString("phone"));
+			u.setDate(rs.getString("date/time"));
+			al.add(u);
+		}
+		
+		return al;
+		
+	}
+	
+	public User getUserInfo() throws SQLException {
+		
+		User u = new User();
+		
+		stmt = con.createStatement();
+		
+		String qury="select * from User where slno='"+se.getAttribute("id")+"'";
+		
+		rs = stmt.executeQuery(qury);
+		
+		if(rs.next()) {
+			u.setFname(rs.getString("fullname"));
+			u.setUname(rs.getString("username"));
+			u.setEmail(rs.getString("email"));
+			u.setPhone(rs.getString("phone"));
+			
+		}
+		
+		return u;
+	}
+
+	public String updateUserData(String fname, String uname, String email, String phone) throws SQLException {
+		int count=0;
+		String status;
+		stmt = con.createStatement();
+		String qury="update User set fullname='"+fname+"' ,username='"+uname+"' , email='"+email+"',phone='"+phone+"' where slno='"+se.getAttribute("id")+"'";
+		
+		count = stmt.executeUpdate(qury);
+		
+		if(count>0)
+			status="success";
+		else
+			status="failed";
+		
+		return status;
+	}
 
 }

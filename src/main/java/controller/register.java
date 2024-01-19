@@ -18,7 +18,7 @@ import model.Registration;
 public class register extends HttpServlet {
 	
 	
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 		
 		PrintWriter out=response.getWriter();
 		HttpSession session = request.getSession();
@@ -94,18 +94,49 @@ public class register extends HttpServlet {
 			rd1.forward(request, response);
 			
 		}
+		else if(request.getParameter("submit")!=null){
+			
+			String fname = request.getParameter("fname");
+			String uname=request.getParameter("uname");
+			String email = request.getParameter("email");
+			String phone =request.getParameter("pno");
+			
+			String status=reg.updateUserData(fname,uname,email,phone);
+			
+			if(status.equals("success")) {
+				request.setAttribute("status", "Updated successfully");
+				RequestDispatcher rd1 = request.getRequestDispatcher("/home.jsp");
+				rd1.forward(request, response);
+			}
+			else {
+				request.setAttribute("status", "Failed to update");
+				RequestDispatcher rd1 = request.getRequestDispatcher("/edit.jsp");
+				rd1.forward(request, response);
+			}
+			
+		}
 		
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			processRequest(req, resp);
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)  {
+			try {
+				processRequest(req, resp);
+			} catch (ServletException | IOException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	 
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			processRequest(req, resp);
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+			try {
+				processRequest(req, resp);
+			} catch (ServletException | IOException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	 
 	}
 	
