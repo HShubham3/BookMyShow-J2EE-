@@ -15,7 +15,7 @@
             display:block;
         }
         .jumbotron{
-            background-color: white;
+            background-color: #FFFFFF;
         }
     </style>
 </head>
@@ -25,12 +25,11 @@
         <% if (session.getAttribute("uname") != null) {
                 Registration reg = new Registration(session);
                 User u = reg.getUserInfo();%>
-        <font color="blue" size="5"><br>
-        <h2> Edit Profile</h2>
-        </font>
         <form action='register' method='POST'>
             <div class="container ">
+               
                 <div class="jumbotron">
+                <h1> EDITE PROFILE</h1>
                 <div class="form-group col-md-4">
                         <label>UserName</label>
                         <input type="text" class="form-control"  name="uname" value="<%=u.getUname()%>">

@@ -12,14 +12,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 <style>
 .jumbotron{
-	 background-color: #333333;
+	 background-color: #666666;
 	 margin:0;
 }
 
 body{
  
  color:White;
-	background-color:#333333;
+	background-color:#666666;
  
 }
 
@@ -50,7 +50,7 @@ body{
 </head>
 <body>
 
-    <%@include file="header.jsp"%>
+    <%@include file="header1.jsp"%>
         
     <center>
         <% if (session.getAttribute("id") != null && session.getAttribute("id").equals("1")) {%>

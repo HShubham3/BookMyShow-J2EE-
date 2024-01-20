@@ -10,7 +10,7 @@ public class User {
 	
 	
 	public String getFname() {
-		System.out.println(fname+"fname");
+//		System.out.println(fname+"fname");
 		return fname;
 	}
 	
@@ -19,7 +19,7 @@ public class User {
 	}
 	
 	public String getUname() {
-		System.out.println(uname+"uname");
+//		System.out.println(uname+"uname");
 		return uname;
 	}
 	
@@ -28,7 +28,7 @@ public class User {
 	}
 	
 	public String getEmail() {
-		System.out.println(email+"email");
+//		System.out.println(email+"email");
 		return email;
 	}
 	
@@ -37,7 +37,7 @@ public class User {
 	}
 	
 	public String getPhone() {
-		System.out.println(phone+"phone");
+//		System.out.println(phone+"phone");
 		return phone;
 	}
 	
