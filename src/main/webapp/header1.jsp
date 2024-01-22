@@ -36,7 +36,7 @@
                     </select>
                     <% if (session.getAttribute("uname") != null) {
                      if (session.getAttribute("id").equals("1")){%>
-                    <div class="option"><a href="delete.jsp">Delete</a></div>
+                    <div class="option"><a href="DeleteUser.jsp">Delete</a></div>
                     <div class="option"><a href="search.jsp">Search</a></div>
                     <%}%>
                     <div class="option"><a href="edit.jsp" >Edit</a></div>

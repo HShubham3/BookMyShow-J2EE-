@@ -2,6 +2,7 @@ package model;
 
 public class User {
 	
+	private String id;
 	private String fname;
 	private String uname;
 	private String email;
@@ -9,6 +10,16 @@ public class User {
 	private String date;
 	
 	
+	
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getFname() {
 //		System.out.println(fname+"fname");
 		return fname;
