@@ -21,7 +21,7 @@ public class DeleteUser extends HttpServlet {
 		if(req.getParameter("delete")!=null) {
 			
 			String id = req.getParameter("uid");
-			
+//			System.out.println(id);
 			String status=new Registration(session).deleteUser(id); 
 			
 			if(status.equals("success")) {

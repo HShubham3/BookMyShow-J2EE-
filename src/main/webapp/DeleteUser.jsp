@@ -10,16 +10,38 @@
 <meta charset="UTF-8">
 <title>Delete|Page</title>
 </head>
+
+
+<style>
+
+body{
+color:#ffffff;
+background:#000000;
+}
+.table{
+
+margin:8rem auto 0 auto;
+	border:2px solid #333333;
+	background:#969696;
+    
+}
+
+th {
+padding:25px;
+}
+
+</style>
+
 <body>
 
-<%if(session.getAttribute("uname")!= null && session.getAttribute("id").equals("1")){%>
+<%if(session.getAttribute("uname")!= null && session.getAttribute("id").equals("1") && request.getAttribute("status")!=null){%>
 
 <div class="msg"><%=request.getAttribute("status")%></div>
 
 <%} %>
 
 
-<table>
+<table class="table">
 
 <thead>
 <tr>
@@ -47,7 +69,7 @@
 		<td><%=u.getEmail()%></td>
 		<td>
 		<form action="delete" method="post">
-		<input type="text" name="uid" placeholder="<%=u.getId()%>" style="display:none;" />
+		<input type="text" name="uid" value="<%=u.getId()%>" style="display:none;" />
 		<input type="submit" value="Delete" name="delete"/>
 		</form>
 		</td>

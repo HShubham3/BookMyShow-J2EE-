@@ -144,4 +144,41 @@ public class Registration {
 		return status;
 	}
 
+	public ArrayList<User> userList() throws SQLException{
+		ArrayList<User> al = new ArrayList();
+		stmt = con.createStatement();
+		String qury="select * from User";
+		
+		rs=stmt.executeQuery(qury);
+		
+		while(rs.next()) {
+			User u = new User();
+			u.setId(rs.getString("slno"));
+			u.setFname(rs.getString("fullname"));
+			u.setUname(rs.getString("username"));
+			u.setPhone(rs.getString("phone"));
+			u.setEmail(rs.getString("email"));
+			al.add(u);
+		}
+		
+		
+		return al;
+	}
+
+	public String deleteUser(String id) throws SQLException {
+		
+		String status;
+		stmt = con.createStatement();
+		String qry = "delete from showbooking.user where slno='"+id+"'";
+		
+		int count=stmt.executeUpdate(qry);
+		
+		if(count>=1)
+			status="success";
+		else
+			status="failed";
+		
+		return status;
+	}
+	
 }
