@@ -16,7 +16,7 @@
 
 body{
 color:#ffffff;
-background:#000000;
+background:white;
 }
 .table{
 
