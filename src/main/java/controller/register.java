@@ -71,7 +71,6 @@ public class register extends HttpServlet {
 			try {
 				status = reg.login(username,password);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
